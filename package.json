@@ -1,0 +1,25 @@
+{
+  "name": "family-calendar-backend",
+  "version": "0.0.0",
+  "description": "Backend for the Family Calendar application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mthorning/family-calendar-backend.git"
+  },
+  "author": "@thorning_m",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mthorning/family-calendar-backend/issues"
+  },
+  "homepage": "https://github.com/mthorning/family-calendar-backend#readme",
+  "dependencies": {
+    "graphql": "^14.2.0",
+    "koa": "^2.7.0",
+    "koa-graphql": "^0.8.0",
+    "mongoose": "^5.4.20"
+  }
+}
