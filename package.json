@@ -2,9 +2,9 @@
   "name": "family-calendar-backend",
   "version": "0.0.0",
   "description": "Backend for the Family Calendar application",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon src/server.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
     "graphql": "^14.2.0",
     "koa": "^2.7.0",
     "koa-graphql": "^0.8.0",
+    "koa-mount": "^4.0.0",
     "mongoose": "^5.4.20"
   }
 }
