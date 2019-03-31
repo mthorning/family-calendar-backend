@@ -7,10 +7,6 @@ services:
     restart: always
     ports:
       - "9000:9000"
-    depends_on:
-      - mongo_db
-    links:
-      - mongo_db
     environment:
       - MONGO_URL='mongodb://mongo_db'
       - PRODUCTION=true
