@@ -14,6 +14,7 @@ services:
     environment:
       - MONGO_URL='mongodb://mongo_db'
       - PRODUCTION=true
-  networks:
+networks:
+  default:
     external:
       name: squishychat_default
