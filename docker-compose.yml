@@ -1,0 +1,22 @@
+version: "3"
+services:
+  famcal_api:
+    build: .
+    container_name: family-calendar_BE
+    command: node ./server.js
+    restart: always
+    ports:
+      - "9000:9000"
+    depends_on:
+      - mongo_db
+    links:
+      - mongo_db
+    environment:
+      - MONGO_URL='mongodb://mongo_db'
+      - PRODUCTION=true
+  mongo_db:
+    image: mongo
+    restart: always
+    container_name: squishychat_mongo_db
+    volumes:
+      - /data/db:/data/db

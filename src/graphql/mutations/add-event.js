@@ -1,17 +1,19 @@
-const { GraphQLString } = require("graphql");
-const eventGraphQLType = require("../types/event");
+const { GraphQLNonNull } = require("graphql");
 const Event = require("../../models/event");
+const { getDayOfWeek } = require("../../utils");
+const eventGraphQLType = require("../types/event");
+const eventGraphQLInputType = require("../types/event-input");
 
 const addEvent = {
   type: eventGraphQLType,
   args: {
-    start: { type: GraphQLString },
-    end: { type: GraphQLString }
+    input: { type: new GraphQLNonNull(eventGraphQLInputType) }
   },
-  resolve(parent, args) {
+  resolve(_, { input }) {
+    const { year, month, date } = input;
     const newEvent = new Event({
-      start: args.start,
-      end: args.end
+      ...input,
+      day: getDayOfWeek(new Date(year, month, date).getDay())
     });
     return newEvent.save();
   }

@@ -1,20 +1,20 @@
 const {
-  GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLString,
   GraphQLInt,
   GraphQLBoolean
 } = require("graphql");
 
-const TimeType = new GraphQLObjectType({
-  name: "Time",
+const TimeType = new GraphQLInputObjectType({
+  name: "TimeInput",
   fields: () => ({
     hours: { type: GraphQLInt },
     minutes: { type: GraphQLInt }
   })
 });
 
-const EventType = new GraphQLObjectType({
-  name: "Event",
+const EventType = new GraphQLInputObjectType({
+  name: "EventInput",
   fields: () => ({
     id: { type: GraphQLString },
     full_day: { type: GraphQLBoolean },
@@ -23,7 +23,6 @@ const EventType = new GraphQLObjectType({
     date: { type: GraphQLInt },
     month: { type: GraphQLInt },
     year: { type: GraphQLInt },
-    day: { type: GraphQLString },
     type: { type: GraphQLString },
     name: { type: GraphQLString }
   })

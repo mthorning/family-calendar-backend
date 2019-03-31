@@ -7,7 +7,7 @@ const deleteEvent = {
   args: {
     id: { type: GraphQLString }
   },
-  resolve(parent, args) {
+  resolve(_, args) {
     return Event.findByIdAndDelete(args.id)
       .then(event => event.remove())
       .catch(err => console.error(err));

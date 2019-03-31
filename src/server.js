@@ -4,7 +4,9 @@ const mount = require("koa-mount");
 const schema = require("./graphql/schema");
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost/family-calendar", {
+const mongoUrl = process.env.MONGO_URL || "mongodb://localhost";
+
+mongoose.connect(`${mongoUrl}/family-calendar`, {
   useNewUrlParser: true
 });
 
