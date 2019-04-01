@@ -21,7 +21,7 @@ app.on("error", err => {
 
 app.use(
   mount(
-    "/api",
+    "/graphql",
     graphqlHTTP({
       schema,
       graphiql: true
