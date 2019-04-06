@@ -1,32 +1,25 @@
 const {
+  GraphQLInputObjectType,
   GraphQLObjectType,
   GraphQLString,
-  GraphQLInt,
   GraphQLBoolean
-} = require("graphql");
+} = require('graphql');
 
-const TimeType = new GraphQLObjectType({
-  name: "Time",
-  fields: () => ({
-    hours: { type: GraphQLInt },
-    minutes: { type: GraphQLInt }
-  })
+const fields = () => ({
+  id: { type: GraphQLString },
+  allDay: { type: GraphQLBoolean },
+  start: { type: GraphQLString },
+  end: { type: GraphQLString },
+  title: { type: GraphQLString }
 });
 
 const EventType = new GraphQLObjectType({
-  name: "Event",
-  fields: () => ({
-    id: { type: GraphQLString },
-    full_day: { type: GraphQLBoolean },
-    start_time: { type: TimeType },
-    end_time: { type: TimeType },
-    date: { type: GraphQLInt },
-    month: { type: GraphQLInt },
-    year: { type: GraphQLInt },
-    day: { type: GraphQLString },
-    type: { type: GraphQLString },
-    name: { type: GraphQLString }
-  })
+  name: 'Event',
+  fields
 });
 
-module.exports = EventType;
+const EventInputType = new GraphQLInputObjectType({
+  name: 'EventInput',
+  fields
+});
+module.exports = { EventType, EventInputType };

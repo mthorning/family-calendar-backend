@@ -1,11 +1,10 @@
-const Event = require("../../models/event");
-const eventGraphQLType = require("../types/event");
-const eventGraphQLInputType = require("../types/event-input");
+const Event = require('../../models/event');
+const { EventType, EventInputType } = require('../types/event');
 
 const updateEvent = {
-  type: eventGraphQLType,
+  type: EventType,
   args: {
-    input: { type: eventGraphQLInputType }
+    input: { type: EventInputType }
   },
   resolve(_, { input }) {
     const { id, ...rest } = input;

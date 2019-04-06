@@ -1,9 +1,9 @@
-const { GraphQLString } = require("graphql");
-const eventGraphQLType = require("../types/event");
-const Event = require("../../models/event");
+const { GraphQLString } = require('graphql');
+const { EventType } = require('../types/event');
+const Event = require('../../models/event');
 
 const deleteEvent = {
-  type: eventGraphQLType,
+  type: EventType,
   args: {
     id: { type: GraphQLString }
   },
