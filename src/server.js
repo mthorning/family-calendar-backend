@@ -2,6 +2,7 @@ const koa = require('koa');
 const graphqlHTTP = require('koa-graphql');
 const mount = require('koa-mount');
 const schema = require('./graphql/schema');
+const root = require('./graphql/root');
 const mongoose = require('mongoose');
 
 const mongoUrl = process.env.MONGO_URL || 'mongodb://localhost';
@@ -26,6 +27,7 @@ app.use(
     '/graphql',
     graphqlHTTP({
       schema,
+      rootValue: root,
       graphiql: true
     })
   )

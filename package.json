@@ -4,7 +4,7 @@
   "description": "Backend for the Family Calendar application",
   "main": "src/server.js",
   "scripts": {
-    "start": "nodemon src/server.js",
+    "start": "docker start mongodb && nodemon src/server.js",
     "postversion": "git push && git push --tags"
   },
   "repository": {
