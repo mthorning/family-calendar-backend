@@ -4,17 +4,17 @@ module.exports = {
   listEvents() {
     return Event.find();
   },
-  create(input) {
+  createEvent(input) {
     const newEvent = new Event(input);
     return newEvent.save();
   },
-  update(input) {
+  updateEvent(input) {
     const { id, ...rest } = input;
     return Event.findByIdAndUpdate(id, { $set: rest }, { new: true }).catch(
       err => console.error(err)
     );
   },
-  delete({ id }) {
+  deleteEvent({ id }) {
     return Event.findByIdAndDelete(id)
       .then(event => event.remove())
       .then(() => `${id} successfully deleted`)
