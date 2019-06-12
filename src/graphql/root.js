@@ -1,4 +1,5 @@
 const Event = require('../models/event');
+const Holiday = require('../models/holiday');
 
 module.exports = {
   listEvents() {
@@ -9,15 +10,25 @@ module.exports = {
     return newEvent.save();
   },
   updateEvent(input) {
-    const { id, ...rest } = input;
-    return Event.findByIdAndUpdate(id, { $set: rest }, { new: true }).catch(
-      err => console.error(err)
+    const {id, ...rest} = input;
+    return Event.findByIdAndUpdate(id, {$set: rest}, {new: true}).catch(err =>
+      console.error(err),
     );
   },
-  deleteEvent({ id }) {
+  deleteEvent({id}) {
     return Event.findByIdAndDelete(id)
       .then(event => event.remove())
       .then(() => `${id} successfully deleted`)
       .catch(err => console.error(err));
-  }
+  },
+  createHoliday(input) {
+    const newHoliday = new Holiday(input);
+    return newHoliday.save();
+  },
+  deleteHoliday({id}) {
+    return Event.findByIdAndDelete(id)
+      .then(event => event.remove())
+      .then(() => `${id} successfully deleted`)
+      .catch(err => console.error(err));
+  },
 };
