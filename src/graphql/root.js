@@ -5,6 +5,9 @@ module.exports = {
   listEvents() {
     return Event.find();
   },
+  listHolidays() {
+    return Holiday.find();
+  },
   createEvent(input) {
     const newEvent = new Event(input);
     return newEvent.save();
