@@ -20,8 +20,8 @@ module.exports = buildSchema(`
   type Mutation {
     createEvent(title: String!, start: String, end: String, allDay: Boolean): Event
     updateEvent(id: String!, title: String, start: String, end: String, allDay: Boolean): Event
-    deleteEvent(id: String!): String
+    deleteEvent(id: String!): Event
     createHoliday(start: String!, end: String!): Holiday
-    deleteHoliday(id: String!): String
+    deleteHoliday(id: String!): Holiday
   }
 `);

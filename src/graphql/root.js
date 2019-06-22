@@ -3,6 +3,7 @@ const Holiday = require('../models/holiday');
 
 module.exports = {
   listEvents() {
+    console.log('Listing events...');
     return Event.find();
   },
   listHolidays() {
@@ -21,7 +22,6 @@ module.exports = {
   deleteEvent({id}) {
     return Event.findByIdAndDelete(id)
       .then(event => event.remove())
-      .then(() => `${id} successfully deleted`)
       .catch(err => console.error(err));
   },
   createHoliday(input) {
@@ -29,9 +29,8 @@ module.exports = {
     return newHoliday.save();
   },
   deleteHoliday({id}) {
-    return Event.findByIdAndDelete(id)
-      .then(event => event.remove())
-      .then(() => `${id} successfully deleted`)
+    return Holiday.findByIdAndDelete(id)
+      .then(holiday => holiday.remove())
       .catch(err => console.error(err));
   },
 };
