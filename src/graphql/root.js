@@ -6,9 +6,6 @@ module.exports = {
     console.log('Listing events...');
     return Event.find();
   },
-  listHolidays() {
-    return Holiday.find();
-  },
   createEvent(input) {
     const newEvent = new Event(input);
     return newEvent.save();
@@ -23,6 +20,9 @@ module.exports = {
     return Event.findByIdAndDelete(id)
       .then(event => event.remove())
       .catch(err => console.error(err));
+  },
+  listHolidays() {
+    return Holiday.find();
   },
   createHoliday(input) {
     const newHoliday = new Holiday(input);

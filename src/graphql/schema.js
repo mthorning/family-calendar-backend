@@ -2,15 +2,16 @@ const {buildSchema} = require('graphql');
 
 module.exports = buildSchema(`
   type Event {
-    id: ID,
+    id: ID
     title: String
-    allDay: Boolean
-    start: String,
+    childCover: Boolean
+    notes: String
+    start: String
     end: String
   }
   type Holiday {
-    id: ID,
-    start: String,
+    id: ID
+    start: String
     end: String
     }
   type Query {
@@ -18,8 +19,8 @@ module.exports = buildSchema(`
     listHolidays: [Holiday]
   }
   type Mutation {
-    createEvent(title: String!, start: String, end: String, allDay: Boolean): Event
-    updateEvent(id: String!, title: String, start: String, end: String, allDay: Boolean): Event
+    createEvent(title: String!, start: String, end: String, childCover: Boolean, notes: String): Event
+    updateEvent(id: String!, title: String, start: String, end: String, childCover: Boolean, notes: String): Event
     deleteEvent(id: String!): Event
     createHoliday(start: String!, end: String!): Holiday
     deleteHoliday(id: String!): Holiday
