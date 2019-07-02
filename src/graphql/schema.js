@@ -15,7 +15,7 @@ module.exports = buildSchema(`
     end: String
     }
   type Query {
-    listEvents: [Event]
+    listEvents(start: String, end: String): [Event]
     listHolidays: [Holiday]
   }
   type Mutation {
