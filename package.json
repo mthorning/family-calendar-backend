@@ -1,6 +1,6 @@
 {
   "name": "family-calendar-backend",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Backend for the Family Calendar application",
   "main": "src/server.js",
   "scripts": {
