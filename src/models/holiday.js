@@ -5,4 +5,5 @@ const HolidaySchema = new mongoose.Schema({
   end: Date,
 });
 
+console.log('creating Holiday model');
 module.exports = mongoose.model('Holiday', HolidaySchema);

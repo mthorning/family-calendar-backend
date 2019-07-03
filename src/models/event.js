@@ -9,4 +9,5 @@ const EventSchema = new mongoose.Schema({
   notes: String,
 });
 
+console.log('creating Event model');
 module.exports = mongoose.model('Event', EventSchema);
