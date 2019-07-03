@@ -17,6 +17,7 @@ db.once('open', () => console.log('Database connected.'));
 
 const app = new koa();
 app.listen(9000);
+console.log('app listening on port 9000');
 
 app.on('error', err => {
   console.log('Server error', err);
