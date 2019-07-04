@@ -11,7 +11,6 @@ module.exports = {
         ],
       });
     }*/
-    console.log('list events called');
     return Event.find();
   },
   createEvent(input) {
@@ -34,7 +33,6 @@ module.exports = {
       .catch(err => console.error(err));
   },
   listHolidays() {
-    console.log('list holidays called');
     return Holiday.find();
   },
   createHoliday(input) {
